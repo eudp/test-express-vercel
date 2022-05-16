@@ -9,14 +9,14 @@ const client = new Client({
   password: "",
   port: 5432,
 });
-*/
+
 client.connect((err) => {
   if (err) {
     console.error("connection error", err.stack);
   } else {
     console.log("connected");
   }
-});
+});*/
 app.get("/", async (req, res) => {
   /*const response = await client.query("SELECT $1::text as message", [
     "Hello world!",
