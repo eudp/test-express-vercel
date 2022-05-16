@@ -9,7 +9,7 @@ const client = new Client({
   password: "",
   port: 5432,
 });
-
+*/
 client.connect((err) => {
   if (err) {
     console.error("connection error", err.stack);
@@ -18,17 +18,16 @@ client.connect((err) => {
   }
 });
 app.get("/", async (req, res) => {
-  const response = await client.query("SELECT $1::text as message", [
+  /*const response = await client.query("SELECT $1::text as message", [
     "Hello world!",
   ]);response.rows[0].message
-  await client.end();*/ 
-  
-  res.status(200).json({ message:  "Hello world!"});
+  await client.end();*/
+
+  res.status(200).json({ message: "Hello world!" });
 });
 
 app.listen(port, () => {
   console.log(`Example app listening on port1 ${port}`);
 });
-
 
 module.exports = app;
