@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.port || 5000;
-const { Client } = require("pg");
+/*const { Client } = require("pg");
 const client = new Client({
   user: "postgres",
   host: "127.0.0.1",
@@ -20,9 +20,10 @@ client.connect((err) => {
 app.get("/", async (req, res) => {
   const response = await client.query("SELECT $1::text as message", [
     "Hello world!",
-  ]);
-  await client.end();
-  res.status(200).json({ message: response.rows[0].message });
+  ]);response.rows[0].message
+  await client.end();*/ 
+  
+  res.status(200).json({ message:  "Hello world!"});
 });
 
 app.listen(port, () => {
